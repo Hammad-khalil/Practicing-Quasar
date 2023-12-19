@@ -6,7 +6,7 @@
   @keyup="handlekeyup"
   @keyup.enter="enterMethod"
   >
-  <h5>{{message}}</h5>
+  <h5 class="border-gray" v-show="message.length>0">{{message}}</h5>
   <button @click="emptyMessage">Vanish input data</button>
   </q-page>
 </template>
@@ -36,4 +36,7 @@ export default {
 </script>
 
 <style>
+.border-gray{
+  border: 3px solid gray;
+}
 </style>
