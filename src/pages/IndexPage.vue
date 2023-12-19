@@ -1,17 +1,19 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page padding>
+  <input v-model="message"/>
+  <h5>{{message}}</h5>
   </q-page>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'IndexPage'
-})
+export default {
+  data () {
+    return {
+      message: 'We Can Bind Data of input bar and Data property value'
+    }
+  }
+}
 </script>
+
+<style>
+</style>
