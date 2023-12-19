@@ -7,7 +7,10 @@
   @keyup.enter="enterMethod"
   >
   // By using V-show it will make display none when condition does not match and vice versa
-  <h5 class="border-gray" v-show="message.length>0">{{message}}</h5>
+  <h5
+   v-if="message.length>0" class="border-gray"
+  >{{message}}</h5>
+  <h6 v-else> No Message Left 😐</h6>
   <button @click="emptyMessage">Vanish input data</button>
   </q-page>
 </template>
