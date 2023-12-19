@@ -1,8 +1,12 @@
+<!-- eslint-disable eqeqeq -->
+<!-- eslint-disable eqeqeq -->
 <template>
   <q-page padding>
-  <input v-model="message"/>
+  <input v-model="message"
+  @keyup="handlekeyup"
+  >
   <h5>{{message}}</h5>
-  <button @click="message=' '">Vanish input data</button>
+  <button @click="emptyMessage">Vanish input data</button>
   </q-page>
 </template>
 
@@ -12,12 +16,19 @@ export default {
     return {
       message: 'We Can Bind Data of input bar and Data property value'
     }
-  // },
-  // methods: {
-  //   emptyMessage () {
-  //     this.message = ''
-  //   }
-  // }
+  },
+  methods: {
+    emptyMessage () {
+      this.message = ''
+    },
+    handlekeyup (e) {
+      // eslint-disable-next-line eqeqeq
+      if (e.keyCode == 27) {
+        alert('You Pressed ESC!!')
+      } else {
+        console.log(e.keyCode)
+      }
+    }
   }
 }
 </script>
