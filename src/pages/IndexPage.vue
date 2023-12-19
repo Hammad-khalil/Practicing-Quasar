@@ -3,11 +3,13 @@
 <template>
   <q-page padding>
 
-  <button @click="count++">{{count}}</button>
+  <button class="btn" @click="count++">{{count}}</button>
   <input v-model="message"
   @keyup="handlekeyup"
   @keyup.enter="enterMethod"
+  :class="{ 'error' : message.length>22}"
   >
+  <div class="totalchar">{{message.length}}  (Total Characters must be under 22)</div>
    <!-- By using V-show it will make display none when condition does not match and vice versa -->
   <h5
    v-if="message.length>0" class="border-gray"
@@ -53,7 +55,26 @@ export default {
 </script>
 
 <style>
+button input {
+  font-size: 23px;
+}
 .border-gray{
   border: 3px solid gray;
+}
+.btn{
+  position: absolute;
+  top: 0%;
+  left: 18%;
+}
+.error{
+  color: red;
+  background-color: pink;
+}
+
+.totalchar{
+  position: absolute;
+  left: 18%;
+  color: white;
+  background-color: firebrick;
 }
 </style>
