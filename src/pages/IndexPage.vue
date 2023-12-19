@@ -4,17 +4,18 @@
 
   <q-page>
   <ul>
-  <li v-for="(task,index) in tasks" :key="task">
-  <div>{{task.name}} {{index}}</div>
-  <small>{{task.dueDate}} @ {{task.dueTime}}</small>
-  <button @click="deleteTask(index)">X</button>
-  </li>
+  <delete-task
+  :task = "task"
+  :index = "index"
+   v-for="(task,index) in tasks"
+    :key="task"></delete-task>
   </ul>
   </q-page>
 
 </template>
 
 <script>
+import DeleteTask from 'components/delete-task.vue'
 export default {
   data () {
     return {
@@ -41,6 +42,9 @@ export default {
     deleteTask (index) {
       this.tasks.splice(index, 1)
     }
+  },
+  components: {
+    DeleteTask
   }
 }
 
