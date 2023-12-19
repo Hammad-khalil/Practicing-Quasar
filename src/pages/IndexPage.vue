@@ -16,7 +16,7 @@
   <button @click="emptyMessage">Vanish input data</button>
   <hr>
 
-  <h6>{{messageUppercase()}}</h6>
+  <h6>{{messageUppercase}}</h6>
   </q-page>
 </template>
 
@@ -27,6 +27,12 @@ export default {
       message: 'Enter any text',
       count: 0
       // message: 'We Can Bind Data of input bar and Data property value'
+    }
+  },
+  computed: {
+    messageUppercase () {
+      console.log('Message Uppercase Button was fired !!!')
+      return this.message.toUpperCase()
     }
   },
   methods: {
@@ -41,12 +47,7 @@ export default {
         console.log(e.keyCode)
       }
     },
-    enterMethod () { alert(this.message) },
-    messageUppercase () {
-      console.log('Message Uppercase Button was fired !!!')
-      return this.message.toUpperCase()
-    }
-
+    enterMethod () { alert(this.message) }
   }
 }
 </script>
