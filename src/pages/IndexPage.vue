@@ -2,7 +2,7 @@
   <q-page padding>
   <input v-model="message"/>
   <h5>{{message}}</h5>
-  <button @click="emptyMessage">Vanish input data</button>
+  <button @click="message=' '">Vanish input data</button>
   </q-page>
 </template>
 
@@ -12,11 +12,12 @@ export default {
     return {
       message: 'We Can Bind Data of input bar and Data property value'
     }
-  },
-  methods: {
-    emptyMessage () {
-      this.message = ''
-    }
+  // },
+  // methods: {
+  //   emptyMessage () {
+  //     this.message = ''
+  //   }
+  // }
   }
 }
 </script>
