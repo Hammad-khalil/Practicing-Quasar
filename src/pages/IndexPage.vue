@@ -8,7 +8,7 @@
   :task = "task"
   :index = "index"
    v-for="(task,index) in tasks"
-    :key="task"></delete-task>
+    :key="task">{{task.name}}</delete-task>
   </ul>
   </q-page>
 
