@@ -4,6 +4,7 @@
   <q-page padding>
   <input v-model="message"
   @keyup="handlekeyup"
+  @keyup.enter="enterMethod"
   >
   <h5>{{message}}</h5>
   <button @click="emptyMessage">Vanish input data</button>
@@ -28,7 +29,8 @@ export default {
       } else {
         console.log(e.keyCode)
       }
-    }
+    },
+    enterMethod () { alert(this.message) }
   }
 }
 </script>
