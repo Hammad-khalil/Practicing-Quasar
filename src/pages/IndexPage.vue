@@ -8,6 +8,7 @@
   @keyup="handlekeyup"
   @keyup.enter="enterMethod"
   :class="{ 'error' : message.length>22}"
+  ref="messageInput"
   >
   <div class="totalchar">{{message.length}}  (Total Characters must be under 22)</div>
    <!-- By using V-show it will make display none when condition does not match and vice versa -->
@@ -52,17 +53,8 @@ export default {
     enterMethod () { alert(this.message) }
   },
   //   👇 These Are LifeCycle Hooks 👇
-  beforeCreate () {
-    console.log('Before Created')
-  },
-  created () {
-    console.log('Created')
-  },
-  beforeMount () {
-    console.log('beforeMount')
-  },
   mounted () {
-    console.log('Mounted')
+    this.$refs.messageInput.className = 'bg-green'
   }
 
 }
