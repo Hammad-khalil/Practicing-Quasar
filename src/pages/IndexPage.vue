@@ -50,7 +50,21 @@ export default {
       }
     },
     enterMethod () { alert(this.message) }
+  },
+  //   👇 These Are LifeCycle Hooks 👇
+  beforeCreate () {
+    console.log('Before Created')
+  },
+  created () {
+    console.log('Created')
+  },
+  beforeMount () {
+    console.log('beforeMount')
+  },
+  mounted () {
+    console.log('Mounted')
   }
+
 }
 </script>
 
